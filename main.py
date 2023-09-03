@@ -1,8 +1,7 @@
 from models import Restaurant, Customer, Review, session
 
 if __name__ == "__main__":
-    # Example usage:
-
+    # Test
     # Get the fanciest restaurant
     fanciest_restaurant = Restaurant.fanciest()
     print(f"Fanciest restaurant: {fanciest_restaurant.name}")
@@ -19,7 +18,7 @@ if __name__ == "__main__":
     session.add(new_customer)
     session.commit()
 
-    # Add a review for a restaurant
+    # Add review for a restaurant
     new_review = Review(customer=new_customer, restaurant=restaurant1, star_rating=4)
     session.add(new_review)
     session.commit()
@@ -34,7 +33,7 @@ if __name__ == "__main__":
 
     # Delete all reviews by a customer for a specific restaurant
     customer1 = session.query(Customer).filter_by(first_name="John").first()
-    restaurant_to_delete_reviews = restaurant1  # Change this to the desired restaurant
+    restaurant_to_delete_reviews = restaurant1 
     customer1.delete_reviews(restaurant_to_delete_reviews)
     print("Deleted reviews by John Doe for Restaurant 1")
 
